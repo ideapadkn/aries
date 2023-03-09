@@ -2,10 +2,12 @@ $(function () {
     $('.burger').click(function () {
         $('.list').toggleClass('show-menu')
     });
-    $('.slider1').slick({
+    $('.slider').slick({
         prevArrow: '<button type="button" class="slick-prev"><img src="images/slider-arrow-left.svg" alt=""></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="images/slider-arrow-rigth.svg" alt=""></button>',
-        vertical: false,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1
     });
 });
 

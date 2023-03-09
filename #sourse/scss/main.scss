@@ -532,24 +532,46 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 50px 0;
       gap: 60px;
       position: relative;
-      overflow: hidden;
+      // overflow: hidden;
       .slick-arrow {
         background: transparent;
         border: none;
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 0;
+        cursor: pointer;
       }
       .slick-next {
-        margin-left: 10px;
+        right: 20px;
       }
       .slick-prev {
-        margin-left: 10px;
+        right: 80px;
       }
       &-blog-cards {
-
+        &-title {
+          width: 466px;
+          span {
+            font-family: 'Gilroy-Regular';
+            font-size: 16px;
+            line-height: 16px;
+            text-transform: capitalize;
+            color: $secondary-title-color;
+          }
+          font-family: 'Ginora Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 44px;
+          line-height: 50px;
+          text-transform: capitalize;
+          color: $secondary-title-color;
+          &:hover {
+            color: transparent;
+            background-clip: text;
+            background-image: $gradient-color;
+          }
+        }
       }
     }
   }
