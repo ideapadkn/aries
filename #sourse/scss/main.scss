@@ -1,0 +1,556 @@
+$gradient-color: linear-gradient(94.32deg, #99A9FF 0%, #5CE4CF 100%);
+$primary-title-color: #F4F4F4;
+$secondary-title-color: #B8B8B8;
+$primary-color: #99A9FF;
+$secondary-color: #5CE4CF;
+$primary-dark: #1D1D1D;
+body {
+  background-color: $primary-dark;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+%primary-title {
+  font-family: 'Ginora Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 62px;
+  line-height: 74px;
+  text-transform: capitalize;
+  color: $primary-title-color;
+}
+%secondary-title {
+  font-family: 'Gilroy-Regular';
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: $secondary-title-color;
+}
+%btn {
+  font-family: 'Ginora Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: $primary-color;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+.header {
+  background-image: url(../../images/header/header-background.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 30px 0 0 0;
+  margin-bottom: 200px;
+  .navbar { 
+    height: 100px;
+    background-color: #232526;
+    .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      &-inner {
+        display: flex;
+        .list-li {
+          padding: 0 30px;
+          .nav-link {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: $primary-title-color;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 82px;
+      line-height: 96px;
+      text-align: center;
+      text-transform: capitalize;
+      color: $primary-title-color;
+      .span {
+        color: transparent;
+        background-clip: text;
+        background-image: $gradient-color;
+      }
+    }
+  }
+  .header-icon {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+  }
+  .scroll-arrow {
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    cursor: pointer;
+  }
+}
+
+.main {
+  background-image: url(../../images/pattern.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .program {
+    margin-bottom: 200px;
+    position: relative;
+    height: 691px;
+    .program-image {
+      background-image: url(../../images/content/big-centered-image.png);
+      background-position: right;
+      background-repeat: no-repeat;
+      height: 488px;
+      width: 893px;
+      margin: 0 auto;
+      .small-right {
+        position: absolute;
+        right: 0;
+        top: 8%;
+      }
+    }
+    .program-typo {
+      width: 522px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      .program-title {
+        @extend %primary-title;
+        margin-bottom: 60px;
+      }
+      .program-text {
+        @extend %secondary-title;
+        margin-bottom: 60px;
+      }
+      .btn {
+        @extend %btn;
+        img {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .title-sub-title {
+    margin-bottom: 150px;
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 154px;
+      gap: 54px;
+      &-title {
+        @extend %primary-title;
+        flex: 1 0 55%;
+      }
+      &-text {
+        @extend %secondary-title;
+      }
+    }
+  }
+  .funding {
+    margin-bottom: 60px;
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 87px;
+      align-items: center;
+      .funding-image {
+        background-image: url(../../images/content/funding/bg-funding.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        width: 466px;
+        height: 480px;
+        position: relative;
+        flex: 0 1 50%;
+        .small-left {
+          position: absolute;
+          right: 0;
+          top: 8%;
+        }
+      }
+      .funding-typo {
+        flex: 1 0 30%;
+        .sub-title {
+          font-family: 'Ginora Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18px;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.3em;
+          text-transform: capitalize;
+          color: rgba(184, 184, 184, 0.7);
+          margin-bottom: 6px;
+        }
+        .funding-title {
+          @extend %primary-title;
+          font-size: 44px;
+          line-height: 50px;
+          text-transform: capitalize;
+          margin-bottom: 20px;
+        }
+        .funding-text {
+          @extend %secondary-title;
+          margin-bottom: 45px;
+        }
+        .btn {
+          @extend %btn;
+          img {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+  .funding2 {
+    margin-bottom: 230px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1160px;
+      height: 2px;
+      margin-top: 200px;
+      border-radius: 50%;
+      background-color: $primary-color;
+    }
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 87px;
+      align-items: center;
+      .funding2-image {
+        background-image: url(../../images/content/funding/bg-funding2.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        width: 466px;
+        height: 480px;
+        position: relative;
+        flex: 0 1 50%;
+        .small-left {
+          position: absolute;
+          left: 0;
+          top: 8%;
+        }
+      }
+      .funding2-typo {
+        flex: 1 0 30%;
+        .sub-title {
+          font-family: 'Ginora Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18px;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.3em;
+          text-transform: capitalize;
+          color: rgba(184, 184, 184, 0.7);
+          margin-bottom: 6px;
+        }
+        .funding2-title {
+          @extend %primary-title;
+          font-size: 44px;
+          line-height: 50px;
+          text-transform: capitalize;
+          margin-bottom: 20px;
+        }
+        .funding2-text {
+          @extend %secondary-title;
+          margin-bottom: 45px;
+        }
+        .btn {
+          @extend %btn;
+          img {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+  .investment-portfolios {
+    margin-bottom: 200px;
+    .investment-content {
+      &-title {
+        @extend %primary-title;
+        margin-bottom: 90px;
+      }
+      .portfolios {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 90px;
+        &-item {
+          padding: 40px 20px;
+          img {
+            display: inline-block;
+            margin-right: 9px;
+          }
+          .portfolios-title {
+            font-family: 'Ginora Sans';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 36px;
+            line-height: 36px;
+            display: inline-flex;
+            align-items: center;
+            text-transform: capitalize;
+            color: $secondary-title-color;
+            transition: all .3s;
+          }
+          &:hover {
+            background-color: rgba(48, 54, 58, 0.2);
+          }
+        }
+      }
+    }
+  }
+  .team {
+    margin-bottom: 230px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1160px;
+      height: 2px;
+      margin-top: 200px;
+      border-radius: 50%;
+      background-color: $primary-color;
+    }
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      .team1 {
+        margin-top: 70px;
+      }
+      .team-item {
+        color: #fff;
+        margin-bottom: 60px;
+        .name {
+          font-family: 'Ginora Sans';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 26px;
+          line-height: 24px;
+          text-align: center;
+          text-transform: capitalize;
+          color: $secondary-title-color;
+          margin: 30px 0 15px 0;
+        }
+        .tag {
+          font-family: 'Gilroy-Light';
+          font-size: 16px;
+          line-height: 14px;
+          text-align: center;
+          text-transform: capitalize;
+          color: $secondary-title-color;
+        }
+        .team-title {
+          @extend %primary-title;
+          margin-bottom: 40px;
+        }
+        .team-text {
+          @extend %secondary-title;
+          margin-bottom: 29px;
+        }
+        .btn {
+          @extend %btn;
+          img {
+            margin-left: 15px;
+          }
+        }
+      }
+      .content {
+        background-color: #232526;
+        padding: 100px 50px;
+      }
+      .line {
+        height: 922px;
+        width: 5px;
+        border-radius: 100%;
+        background: $gradient-color;
+        margin: 0 60px;
+      }
+    }
+  }
+  .jobs {
+    margin-bottom: 230px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 1160px;
+      height: 2px;
+      margin-top: 200px;
+      border-radius: 50%;
+      background-color: $primary-color;
+    }
+    &-content {
+      .jobs-title {
+        @extend %primary-title;
+        margin-bottom: 140px;
+      }
+      .jobs-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 130px;
+        .jobs-item {
+          &:nth-child(2) {
+            flex: 0 1 267px;
+          }
+          .jobs-posts {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 60px;
+            &-item {
+              padding: 20px 0 20px 30px;
+              position: relative;
+              width: 763px;
+              .sub-title {
+                font-family: 'Ginora Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+                letter-spacing: 0.3em;
+                text-transform: capitalize;
+                color: rgba(184, 184, 184, 0.7);
+                margin-bottom: 5px;
+              }
+              .jobs-posts-title {
+                font-family: 'Ginora Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 44px;
+                line-height: 50px;
+                text-transform: capitalize;
+                color: $primary-title-color;
+                img {
+                  float: right;
+                }
+                margin-bottom: 20px;
+              }
+              .jobs-posts-text {
+                font-family: 'Gilroy-Medium';
+                font-size: 16px;
+                line-height: 16px;
+                text-transform: capitalize;
+                color: $secondary-title-color;
+              }
+              &:hover {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 2px;
+                  background-color: $primary-color;
+                  margin-bottom: 15px;
+                }
+                &::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 2px;
+                  background-color: $primary-color;
+                  margin-top: 15px;
+                }
+              }
+            }
+            .btn {
+              @extend %btn;
+              img {
+                margin: 10px;
+              }
+            }
+          }
+          &-title {
+            font-family: 'Ginora Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 38px;
+            text-transform: capitalize;
+            color: $primary-title-color;
+            margin-bottom: 30px;
+          }
+          &-text {
+            font-family: 'Ginora Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+            text-transform: capitalize;
+            color: $secondary-title-color;
+            margin-bottom: 20px;
+            img {
+              float: right;
+              margin-top: 10px;
+            }
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .insights {
+    margin-bottom: 200px;
+    &-title {
+      @extend %primary-title;
+      margin-bottom: 90px;
+    }
+    .slider {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      overflow: hidden;
+      .slick-arrow {
+        background: transparent;
+        border: none;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+      .slick-next {
+        margin-left: 10px;
+      }
+      .slick-prev {
+        margin-left: 10px;
+      }
+      &-blog-cards {
+
+      }
+    }
+  }
+}
