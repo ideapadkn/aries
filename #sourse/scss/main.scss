@@ -104,11 +104,14 @@ body {
     bottom: 5%;
     right: 5%;
   }
-  .scroll-arrow {
-    position: absolute;
-    bottom: 5%;
-    right: 50%;
-    cursor: pointer;
+  .header-scroll {
+    .scroll-arrow {
+      position: absolute;
+      bottom: 5%;
+      right: 50%;
+      cursor: pointer;
+      animation-name: animation;
+    }
   }
 }
 
