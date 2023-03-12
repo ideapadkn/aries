@@ -8,7 +8,7 @@ $(function () {
         prevArrow: '<button type="button" class="slick-prev"><img src="images/slider-arrow-left.svg" alt=""></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="images/slider-arrow-rigth.svg" alt=""></button>',
         infinite: true,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1
     });
 });
@@ -18,8 +18,8 @@ let btnScroll = document.getElementById('header-scroll');
 let blockScroll = document.getElementById('program');
 
 btnScroll.addEventListener('click', () => {
-	blockScroll.scrollIntoView({
-		block: 'start',
+	window.scrollBy({
+		top: 870,
 		behavior: 'smooth',
 	})
 })

@@ -4,6 +4,21 @@ $secondary-title-color: #B8B8B8;
 $primary-color: #99A9FF;
 $secondary-color: #5CE4CF;
 $primary-dark: #1D1D1D;
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url("fonts/gilroy/Gilroy-ExtraBold.otf") format("otf"),
+  url("fonts/gilroy/Gilroy-ExtraBold.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  }
+@font-face {
+  font-family: "Ginora Sans";
+  src: url("fonts/ginora/") format("otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   background-color: $primary-dark;
   box-sizing: border-box;
@@ -25,8 +40,6 @@ body {
   font-family: 'Gilroy-Regular';
   font-size: 16px;
   line-height: 24px;
-  display: flex;
-  align-items: center;
   color: $secondary-title-color;
 }
 %btn {
@@ -536,9 +549,19 @@ body {
       justify-content: space-between;
       align-items: center;
       padding: 50px 0;
-      gap: 60px;
+      gap: 0 60px;
       position: relative;
-      // overflow: hidden;
+      overflow: hidden;
+      .btn {
+        @extend %btn;
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        cursor: pointer;
+        img {
+          margin-left: 10px;
+        }
+      }
       .slick-arrow {
         background: transparent;
         border: none;
@@ -576,6 +599,113 @@ body {
           }
         }
       }
+    }
+  }
+}
+
+.footer {
+  .seo-contact-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 130px;
+    margin-bottom: 90px;
+    .title-sub-title {
+      .seo-title {
+        color: transparent;
+        background-clip: text;
+        background-image: $gradient-color;
+        @extend %primary-title;
+        margin-bottom: 40px;
+      }
+      .seo-sub-title {
+        width: 518px;
+        @extend %secondary-title;
+      }
+
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .box {
+        position: relative;
+        input {
+          background: transparent;
+          border: none;
+          padding: 15px;
+          border-bottom: 1px solid #565656;;
+          margin-bottom: 40px;
+          outline: none;
+          width: 456px;
+          &:focus, &:valid {
+            label {
+              top: -40px;
+              left: 0;
+              color: $primary-color;
+              font-size: 12px;
+            }
+          }
+        }
+        label {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-family: 'Ginora Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 22px;
+          line-height: 26px;
+          text-transform: capitalize;
+          color: $secondary-title-color;
+          transition: .5s;
+        }
+      }
+      .btn {
+        @extend %btn;
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .socials-pplinks {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+    .socials-links {
+      font-family: 'Ginora Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: $secondary-title-color;
+      margin: 0 15px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  .line {
+    background-color: $primary-color;
+    height: 2px;
+    border-radius: 30%;
+    margin-bottom: 60px;
+  }
+  &-title {
+    font-family: 'Ginora Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: $primary-title-color;
+    margin-bottom: 40px;
+    span {
+      color: $primary-color;
     }
   }
 }
