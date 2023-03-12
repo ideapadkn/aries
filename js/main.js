@@ -1,8 +1,9 @@
 $(function () {
 		// burger menu
-    $('.burger').click(function () {
-        $('.list').toggleClass('show-menu')
-    });
+    $('.menu-burger, .menu-items').on('click', function() {
+			$('.menu-bg, .menu-items, .menu-burger').toggleClass('fs');
+			$('.menu-burger').text() == "☰" ? $('.menu-burger').text('✕') : $('.menu-burger').text('☰');
+		});
 		// slider
     $('.slider').slick({
         prevArrow: '<button type="button" class="slick-prev"><img src="images/slider-arrow-left.svg" alt=""></button>',
@@ -16,10 +17,17 @@ $(function () {
 
 let btnScroll = document.getElementById('header-scroll');
 let blockScroll = document.getElementById('program');
+let topScroll = document.getElementById('scroll');
 
 btnScroll.addEventListener('click', () => {
 	window.scrollBy({
-		top: 870,
+		top: 950,
+		behavior: 'smooth',
+	})
+})
+topScroll.addEventListener('click', () => {
+	window.scrollBy({
+		top: -10000,
 		behavior: 'smooth',
 	})
 })
